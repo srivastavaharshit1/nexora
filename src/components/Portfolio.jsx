@@ -164,7 +164,7 @@ function ProjectModal({ project, onClose }) {
               <div className="flex items-center gap-2">
                 <span className={`w-2 h-2 rounded-full ${isLive ? 'bg-[#10B981] animate-pulse' : 'bg-[#3563E9]'}`}></span>
                 <h3 className="text-xs font-bold text-[#172B4D] uppercase tracking-wider">
-                  {isLive ? 'Live Project Screenshots' : 'Genuine Project Screenshots'} ({screenshots.length} Views)
+                  {isLive ? 'Live Project Screenshots' : 'Genuine Project Screenshots'}
                 </h3>
               </div>
               {isLive && (
@@ -359,7 +359,6 @@ function ProjectCard({ project, index, onOpenDetails }) {
     ? 'omezi.app'
     : `${project.id}.nexora.dev`;
 
-  const screenshotCount = project.screenshots ? project.screenshots.length : 1;
 
   // Handle preview click: if it's a live site, open it; otherwise open details modal
   const handlePreviewClick = () => {
@@ -396,15 +395,6 @@ function ProjectCard({ project, index, onOpenDetails }) {
             loading="lazy"
           />
 
-          {/* Screenshot badge */}
-          {screenshotCount > 1 && (
-            <div className="absolute top-2.5 right-2.5 z-10">
-              <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#172B4D]/80 backdrop-blur-xs text-white shadow-sm">
-                <Eye size={10} />
-                <span>{screenshotCount} Views</span>
-              </span>
-            </div>
-          )}
 
           {/* Hover overlay with clear dual actions */}
           <div className="absolute inset-0 bg-[#172B4D]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 p-4">
